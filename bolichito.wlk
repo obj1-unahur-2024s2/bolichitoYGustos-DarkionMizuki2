@@ -33,3 +33,24 @@ object luisa{
 object juan{
     method mensaje()=4
 }
+
+//colores
+object color{
+    method rojo(){
+        return rojo
+    }
+    method verde(){
+        return verde
+    }
+    method celeste(){
+        return celeste
+    }
+    method pardo(){
+        return pardo
+    }
+}
+
+object rojo{}
+object verde{}
+object celeste{}
+object pardo{}
