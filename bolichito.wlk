@@ -48,9 +48,43 @@ object color{
     method pardo(){
         return pardo
     }
+    method esIgualA(unColor,otroColor){
+        return unColor.obtenerID()==otroColor.obtenerID()
+    }
+    method esBrillante(unColor){
+        return unColor.esBrillante()
+    }
 }
 
-object rojo{}
-object verde{}
-object celeste{}
-object pardo{}
+object rojo{
+    method obtenerID(){
+        return 1
+    }
+    method esBrillante(){
+        return true
+    }
+}
+object verde{
+    method obtenerID(){
+        return 2
+    }
+    method esBrillante(){
+        return true
+    }
+}
+object celeste{
+    method obtenerID(){
+        return 3
+    }
+    method esBrillante(){
+        return false
+    }
+}
+object pardo{
+    method obtenerID(){
+        return 4
+    }
+    method esBrillante(){
+        return false
+    }
+}
