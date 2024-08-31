@@ -60,7 +60,7 @@ object rojo{
     method obtenerID(){
         return 1
     }
-    method esBrillante(){
+    method esFuerte(){
         return true
     }
 }
@@ -68,7 +68,7 @@ object verde{
     method obtenerID(){
         return 2
     }
-    method esBrillante(){
+    method esFuerte(){
         return true
     }
 }
@@ -76,7 +76,7 @@ object celeste{
     method obtenerID(){
         return 3
     }
-    method esBrillante(){
+    method esFuerte(){
         return false
     }
 }
@@ -84,7 +84,7 @@ object pardo{
     method obtenerID(){
         return 4
     }
-    method esBrillante(){
+    method esFuerte(){
         return false
     }
 }
@@ -100,22 +100,27 @@ object material{
 
 object cobre{
     method obtenerID()=5
+    method esBrillante()=true
 }
 
 object vidrio{
     method obtenerID()=6
+    method esBrillante()=true
 }
 
 object lino{
     method obtenerID()=7
+    method esBrillante()=false
 }
 
 object madera{
     method obtenerID()=8
+    method esBrillante()=false
 }
 
 object cuero{
     method obtenerID()=9
+    method esBrillante()=false
 }
 //probar material.cobre() OK
 //probar material.vidrio() OK
@@ -129,3 +134,69 @@ object cuero{
 //probar material.cuero().obtenerID() OK
 //probar material.esIgualA(material.cobre(),material.madera()) OK
 //probar material.esIgualA(material.lino(),material.lino()) OK
+
+object elemento{
+    method remera()=remera
+    method pelota()=pelota
+    method biblioteca()=biblioteca
+    method muneco()=muneco
+    method placa()=placa
+}
+object remera{
+    method obtenerID()=10
+    method peso()=800 //en gramos
+}
+object pelota{
+    method obtenerID()=11
+    method peso()=1300 //en gramos
+}
+object biblioteca{
+    method obtenerID()=12
+    method peso()=8000 //en gramos
+}
+object muneco{
+    var kg=1
+    method obtenerID()=13
+    method peso(){
+        return kg
+    } //en gramos
+    method modificarPesoA(g){
+        kg=g
+    }
+}
+
+object placa{
+    var kg=1
+    method obtenerID()=14
+    method peso()=kg //en gramos
+    method modificarPesoA(g){
+        kg=g
+    }
+}
+
+/*
+PROBAR:
+rojo.esFuerte() -> true ok
+verde.esFuerte() -> true ok
+celeste.esFuerte() -> false ok
+pardo.esFuerte() -> false ok
+cobre.esBrillante() -> true ok
+vidrio.esBrillante() -> true ok
+lino.esBrillante() -> false ok
+madera.esBrillante() -> false ok
+cuero.esBrillante() -> false
+elemento.remera() -> remera ok
+elemento.pelota() -> pelota ok
+elemento.biblioteca() -> biblioteca ok
+elemento.muneco() -> muneco ok
+elemento.placa() -> placa ok
+elemento.remera().peso() -> 800 gramos ok
+elemento.pelota().peso() -> 1300 gramos ok
+elemento.biblioteca().peso() -> 8000 gramos ok
+elemento.muneco().peso() -> 1g inicialmente ok
+elemento.muneco().modificarPesoA(10) ok
+elemento.muneco().peso() -> 10g despues ok
+elemento.placa().peso() -> 1g inicialmente ok
+elemento.placa().modificarPesoA(5) ok
+elemento.placa().peso() -> 5g despues ok
+ */
