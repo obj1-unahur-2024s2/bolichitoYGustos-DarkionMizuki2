@@ -22,6 +22,21 @@ o bien pesan entre 1200 y 1800 gramos.
 
 object rosa{
     method mensaje()=1
+    method leGustaM(unMaterial){
+        return material.esIgualA(unMaterial,cobre) or material.esIgualA(unMaterial,vidrio) or material.esIgualA(unMaterial,lino) or material.esIgualA(unMaterial,madera) or material.esIgualA(unMaterial,cuero)
+    }
+    method noLeGusta(unMaterial){
+        return not ( leGustaM(unMaterial) )
+    }
+    method leGustaE(unElemento){
+        return unElemento.peso()<2000
+    }
+    method leGustaC(unColor){
+        return color.esIgual(unColor,rojo) or color.esIgual(unColor,verde) or color.esIgual(unColor,celeste) or color.esIgual(unColor,pardo)
+    }
+    method leGustaMEC(unMaterial,unElemento,unColor){
+        return leGustaM(unMaterial) and leGustaE(unElemento) and leGustaC(unColor)
+    }
 }
 
 object estefania{
