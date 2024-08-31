@@ -141,6 +141,7 @@ object elemento{
     method biblioteca()=biblioteca
     method muneco()=muneco
     method placa()=placa
+    method esIgualA(elemento1,elemento2)=( elemento1.obtenerID()==elemento2.obtenerID() )
 }
 object remera{
     method obtenerID()=10
@@ -199,4 +200,9 @@ elemento.muneco().peso() -> 10g despues ok
 elemento.placa().peso() -> 1g inicialmente ok
 elemento.placa().modificarPesoA(5) ok
 elemento.placa().peso() -> 5g despues ok
+
+elemento.esIgualA(elemento.remera(),elemento.pelota()) ok
+elemento.esIgualA(elemento.biblioteca(),elemento.biblioteca()) ok
  */
+
+
